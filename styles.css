@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 header {
-    padding: 20px;
+    padding: 40px;
     width: 800px;
     border-radius: 32px;
     margin-left: auto;
@@ -42,21 +43,143 @@ header ul button:hover {
 
 /* Main & Card */
 main {
+    height: 500px;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 100px;
+    padding: 40px;
+    margin-top: 150px;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 32px;
+    background-color: rgb(235, 235, 235);
+
+    display: none;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: darkblue;
+    border-radius: 8px;
+    color: rgb(235, 235, 235);
+}
+
+.card:hover {
+    box-shadow: 5px 5px 1px rgb(255, 197, 197);
+    cursor: pointer;
+}
+
+.card-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#flip-card-container {
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#click-to-flip-card-info {
+    color: gray;
+    cursor: pointer;
+}
+
+#click-to-flip-card-info:hover {
+    color: black;
+}
+
+#flip-card-info {
+    display: none;
+}
+
+/* View Cards */
+#view-cards {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
     margin-top: 150px;
     box-shadow: 1px 1px 10px gray;
     border-radius: 32px;
     background-color: rgb(235, 235, 235);
 }
 
-.card{
+#view-cards-table {
+    width: 100%;
+}
+
+#view-cards-table tr {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    border: 1px solid red;
-    box-shadow: 1px 1px 5px white;
+    flex-direction: space-between;
+}
+
+#view-cards-table td,
+th {
+    width: 50%;
+}
+
+#view-cards-table td {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#view-cards-table th {
+    text-align: left;
+}
+
+/* Add a card */
+#add-a-card-section {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    margin-top: 150px;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 32px;
+    background-color: rgb(235, 235, 235);
+}
+
+#add-a-card-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label[for='add-card']{
+    font-size: 0px;
+}
+
+#add-card-title{
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#add-card-definition{
+    padding: 10px;
+    font-size: 16px;
+}
+
+#add-card{
+    cursor: pointer;
+    padding: 10px;
+    width: 120px;
+    border-radius: 16px;
+}
+
+#add-card:hover{
+    background-color: darkblue;
+    color: white;
+    font-weight: 700;
+    border: 2px solid white;
 }

@@ -19,19 +19,45 @@
     </header>
 
     <!-- Main view -->
-    <main>
+    <main id="main">
         <div class="card">
             <p class="card-name">Airplane</p>
             <!-- <p class="card-definition">A manmade flying aircraft that carries people</p> -->
         </div>
         <div id="flip-card-container">
             <p id="click-to-flip-card-info">Click card to flip</p>
-            <p id="flip-card-info">Click the card to flip it, if it is on the title/name it will flip to the definition and vice versa.</p>
+            <p id="flip-card-info">Click the card to flip it, if it is on the title/name it will flip to the definition
+                and vice versa.</p>
+        </div>
+        <div id="card-options">
         </div>
     </main>
 
     <!-- View all cards section-->
     <section id="view-cards">
+        <table id="view-cards-table">
+            <tr id="view-cards-table-title">
+                <th>Title</th>
+                <th>Definition</th>
+            </tr>
+            <!-- <tr>
+                <td>Airplane</td>
+                <td>A manmade flying aircraft that carries people</td>
+            </tr> -->
+        </table>
+    </section>
+
+    <!-- Add a Card section-->
+    <section id="add-a-card-section">
+        <h1 style="padding-bottom: 20px;">Add Card</h1>
+        <form id="add-a-card-form">
+            <label for="add-card-title">Title</label>
+            <input type="text" id="add-card-title" name="add-card-title" required>
+            <label for="add-card-definition">Definition</label>
+            <input type="text" id="add-card-definition" name="add-card-definition" required>
+            <label for="add-card">Submit</label>
+            <button type="submit" id="add-card" name="add-card">Add Card</button>
+        </form>
     </section>
     <script src="script.js"></script>
 </body>

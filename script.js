@@ -1,52 +1,109 @@
-let viewAllCardsBtn = document.getElementById("view-all-cards");
 let addACardsBtn = document.getElementById("add-a-cards");
-let editACardBtn = document.getElementById("edit-a-card");
-let removeACardBtn = document.getElementById("remove-a-card");
 let clickToFlipCardInfo = document.getElementById("click-to-flip-card-info");
 let flipCardInfo = document.getElementById("flip-card-info");
-let viewCardsBtn = document.getElementById("view-all-cards");
-let viewCardsSection = document.getElementById("view-cards");
-let main = document.getElementById("main");
 
-let addACardForm = document.getElementById("add-a-card-form");
-let addACardTitle = document.getElementById("add-card-title");
-let addACardDefinition = document.getElementById("add-card-definition");
-let addCardBtn = document.getElementById("add-card");
+/* Sections */
+let sections = document.querySelectorAll(".section");
+let viewCardsSection = document.getElementById("view-cards-section");
+let addACardSection = document.getElementById("add-a-card-section");
+let mainSection = document.getElementById("main");
 
-/* Main */
+/* Section Btn */
+let viewMainSectionBtn = document.getElementById("main-section-btn");
+let viewAllCardsSectionBtn = document.querySelector("#view-cards-section-btn");
+let viewAddACardSectionBtn = document.getElementById("add-a-card-section-btn");
+let editACardSectionBtn = document.querySelector("#edit-a-card-section-btn");
+let removeACardSectionBtn = document.getElementById("remove-a-card-section-btn");
+let sectionBtns = document.querySelectorAll("header ul li button");
+
+let sectionIds =
+    [
+        {
+            sectionBtn: sectionBtns[0],
+            sectionName: sections[0].getAttribute("id")
+        },
+        {
+            sectionBtn: sectionBtns[1],
+            sectionName: sections[1].getAttribute("id")
+        },
+        {
+            sectionBtn: sectionBtns[2],
+            sectionName: sections[2].getAttribute("id")
+        }, 
+        {
+            sectionBtn: sectionBtns[3],
+            sectionName: sections[3].getAttribute("id")
+        },        
+        {
+            sectionBtn: sectionBtns[4],
+            sectionName: sections[4].getAttribute("id")
+        }
+    ];
+
+sectionBtns.forEach(section => {
+    section.addEventListener("click", () => {
+        
+    });
+});
+
+/* Home/Main Section */
 clickToFlipCardInfo.addEventListener("click", showFlipCardInfo);
 
 function showFlipCardInfo() {
     if (flipCardInfo.style.display === "" || flipCardInfo.style.display === "none") {
         flipCardInfo.style.display = "block";
-        clickToFlipCardInfo.innerHTML = "Hide info";
+        clickToFlipCardInfo.innerText = "Hide info";
 
     } else if (flipCardInfo.style.display === "block") {
         flipCardInfo.style.display = "none";
-        clickToFlipCardInfo.innerHTML = "Click card to flip";
+        clickToFlipCardInfo.innerText = "Click card to flip";
     }
 }
 
-/* View All Cards Section */
-viewCardsBtn.addEventListener("click", viewAllCards);
-
-function viewAllCards(){
-    main.style.display = 'none';
-    viewCardsSection.style.display = 'flex'
-}
-
 /* Add A Card Section */
-addACardForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+let addACardForm = document.getElementById("add-a-card-form");
+let addACardTitle = document.getElementById("add-card-title");
+let addACardDefinition = document.getElementById("add-card-definition");
+let addCardBtn = document.getElementById("add-card");
 
-    let formValues = {
+/* Get Items From Local Storage */
+let flashcardsArray = localStorage.getItem("flashcards") ? JSON.parse(localStorage.getItem("flashcards")) : [];
+
+/* Add A Card Event */
+addACardForm.addEventListener("submit", function (event) {
+    let newCard = {
+        id: Date.now(),
         title: addACardTitle.value,
         definition: addACardDefinition.value
     };
 
     /* Save to Local Storage */
-    localStorage.setItem("flashCardValues", JSON.stringify(formValues));
-    console.log(JSON.parse(localStorage.getItem("flashCardValues")));
+    flashcardsArray.push(newCard);
+    localStorage.setItem("flashcards", JSON.stringify(flashcardsArray));
+
+    /* Clear Add Card */
+    addACardTitle.value = "";
+    addACardDefinition.value = "";
 });
+
+/* View Cards Section */
+let viewCardsTable = document.getElementById("view-cards-table");
+
+/* Display Cards */
+for (let i = 0; i < flashcardsArray.length; i++) {
+    let viewCardsFormat =
+        `
+    <tr id="${flashcardsArray[i].id}">
+        <td>${flashcardsArray[i].title}</td>
+        <td>${flashcardsArray[i].definition}</td>
+    </tr>
+    `;
+
+    viewCardsTable.innerHTML += viewCardsFormat;
+}
+
+
+
+
 
 

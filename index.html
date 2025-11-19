@@ -11,15 +11,16 @@
 <body>
     <header>
         <ul>
-            <li><button id="view-all-cards">View all cards</button></li>
-            <li><button id="add-a-card">Add a card</button></li>
-            <li><button id="edit-a-card">Edit a card</button></li>
-            <li><button id="remove-a-card">Remove a card</button></li>
+            <li><button id="main-section-btn">Home</button></li>
+            <li><button id="view-cards-section-btn">View all cards</button></li>
+            <li><button id="add-a-card-section-btn">Add a card</button></li>
+            <li><button id="edit-a-card-section-btn">Edit a card</button></li>
+            <li><button id="remove-a-card-section-btn">Remove a card</button></li>
         </ul>
     </header>
 
     <!-- Main view -->
-    <main id="main">
+    <main id="main" class="section">
         <div class="card">
             <p class="card-name">Airplane</p>
             <!-- <p class="card-definition">A manmade flying aircraft that carries people</p> -->
@@ -34,21 +35,17 @@
     </main>
 
     <!-- View all cards section-->
-    <section id="view-cards">
+    <section id="view-cards-section" class="section">
         <table id="view-cards-table">
             <tr id="view-cards-table-title">
                 <th>Title</th>
                 <th>Definition</th>
             </tr>
-            <!-- <tr>
-                <td>Airplane</td>
-                <td>A manmade flying aircraft that carries people</td>
-            </tr> -->
         </table>
     </section>
 
     <!-- Add a Card section-->
-    <section id="add-a-card-section">
+    <section id="add-a-card-section" class="section">
         <h1 style="padding-bottom: 20px;">Add Card</h1>
         <form id="add-a-card-form">
             <label for="add-card-title">Title</label>
@@ -59,6 +56,15 @@
             <button type="submit" id="add-card" name="add-card">Add Card</button>
         </form>
     </section>
+
+    <!-- Edit a Card section -->
+    <section id="edit-a-card-section" class="section">
+    </section>
+
+    <!-- Remove a Card section-->
+    <section id="remove-a-card-section" class="section">
+    </section>
+
     <script src="script.js"></script>
 </body>
 

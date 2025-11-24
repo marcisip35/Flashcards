@@ -12,8 +12,8 @@ let mainSection = document.getElementById("main");
 let viewMainSectionBtn = document.getElementById("main-section-btn");
 let viewAllCardsSectionBtn = document.querySelector("#view-cards-section-btn");
 let viewAddACardSectionBtn = document.getElementById("add-a-card-section-btn");
-let editACardSectionBtn = document.querySelector("#edit-a-card-section-btn");
-let removeACardSectionBtn = document.getElementById("remove-a-card-section-btn");
+let viewEditACardSectionBtn = document.querySelector("#edit-a-card-section-btn");
+let viewRemoveACardSectionBtn = document.getElementById("remove-a-card-section-btn");
 let sectionBtns = document.querySelectorAll("header ul li button");
 
 let sectionIds =
@@ -40,13 +40,22 @@ let sectionIds =
         }
     ];
 
-sectionBtns.forEach(section => {
+sectionBtns.forEach((section,i) => {
     section.addEventListener("click", () => {
-        
+        hideAllSectionsExcept(sectionIds[i].sectionName,i);
     });
 });
 
-/* Home/Main Section */
+function hideAllSectionsExcept(sectionName,index){
+    sections[index].style.display = "flex";
+    for(let i = 0; i < sectionIds.length; i++){
+        if (sections[i].getAttribute("id") !== sectionName){
+            sections[i].style.display = "none";
+        }
+    }
+}
+
+/* Home & Main Section */
 clickToFlipCardInfo.addEventListener("click", showFlipCardInfo);
 
 function showFlipCardInfo() {

@@ -41,9 +41,7 @@ header ul button:hover {
     color: blue;
 }
 
-/* Main & Card */
-main {
-    height: 500px;
+.section{
     width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -52,6 +50,29 @@ main {
     box-shadow: 1px 1px 10px gray;
     border-radius: 32px;
     background-color: rgb(235, 235, 235);
+}
+
+/* Edit and Delete card btns*/
+.edit-a-card-btn, .delete-a-card-btn{
+    font-size: 16px;
+    background-color: maroon;
+    color: white;
+    width: 100px;
+    margin-left: auto;
+    padding: 5px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-a-card-btn:hover, .delete-a-card-btn:hover{
+    background-color: orangered;
+}
+
+/* Main & Card section*/
+main {
+    height: 500px;
 
     display: flex;
     flex-direction: column;
@@ -101,54 +122,35 @@ main {
     display: none;
 }
 
-/* View Cards */
+/* View cards section */
 #view-cards-section{
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px;
-    margin-top: 150px;
-    box-shadow: 1px 1px 10px gray;
-    border-radius: 32px;
-    background-color: rgb(235, 235, 235);
-
     display: none;
 }
 
-#view-cards-table {
+#view-cards-section th{
+    width: 50%;
+}
+
+.cards-table {
     width: 100%;
 }
 
-#view-cards-table tr {
+.cards-table tr {
     display: flex;
     flex-direction: space-between;
 }
 
-#view-cards-table td,
-th {
-    width: 50%;
-}
-
-#view-cards-table td {
+.cards-table td {
     padding-top: 20px;
     padding-bottom: 10px;
 }
 
-#view-cards-table th {
+.cards-table th {
     text-align: left;
 }
 
-/* Add a card */
+/* Add a card section */
 #add-a-card-section {
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px;
-    margin-top: 150px;
-    box-shadow: 1px 1px 10px gray;
-    border-radius: 32px;
-    background-color: rgb(235, 235, 235);
-
     display: none;
     flex-direction: column;
 }
@@ -187,4 +189,42 @@ label[for='add-card']{
     color: white;
     font-weight: 700;
     border: 2px solid white;
+}
+
+/* Edit a card section */
+#edit-a-card-section{
+    display: none;
+    flex-direction: column;
+}
+
+#edit-a-card-section th{
+    width: 45%;
+}
+
+/* Remove a card section */
+#remove-a-card-section{
+    display: none;
+    flex-direction: column;
+}
+
+#remove-a-card-section th{
+    width: 45%;
+}
+
+#remove-all-cards{
+    font-size: 16px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    width: 200px;
+    margin-left: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#remove-all-cards:hover{
+    transition: 0.2s;
+    background-color: rgb(80, 80, 80);
 }

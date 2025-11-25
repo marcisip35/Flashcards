@@ -21,9 +21,11 @@
 
     <!-- Main view -->
     <main id="main" class="section">
-        <div class="card">
-            <p class="card-name">Airplane</p>
-            <!-- <p class="card-definition">A manmade flying aircraft that carries people</p> -->
+        <div class="cards">
+            <div class="card">
+                <!-- <p class="card-name">Airplane</p> -->
+                <!-- <p class="card-definition">A manmade flying aircraft that carries people</p> -->
+            </div>
         </div>
         <div id="flip-card-container">
             <p id="click-to-flip-card-info">Click card to flip</p>
@@ -63,6 +65,13 @@
 
     <!-- Remove a Card section-->
     <section id="remove-a-card-section" class="section">
+        <table id="remove-cards-table" class="cards-table">
+            <tr id="remove-cards-table-title">
+                <th>Title</th>
+                <th>Definition</th>
+            </tr>
+        </table>
+        <button id="remove-all-cards">Delete All</button>
     </section>
 
     <script src="script.js"></script>
